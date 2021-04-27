@@ -23,4 +23,7 @@ dch --local tonimelisma --distribution $DISTRIBUTION 'Add HEIF support'
 dch --local bozaro --distribution $DISTRIBUTION 'Signal error on EOF in jpegload more reliably'
 debuild -us -uc
 
+for i in ../../*.ddeb; do
+  mv "${i}" "${i/.ddeb/.deb}"
+done
 cp ../../*.deb /packages/
